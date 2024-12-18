@@ -1,0 +1,38 @@
+<div id="<%= dom_id inscricao %>">
+  <p>
+    <strong>Palestra:</strong>
+    <%= inscricao.palestra.titulo %>
+  </p>
+
+  <p>
+    <strong>Data:</strong>
+    <%= inscricao.palestra.data %>
+  </p>
+
+  <p>
+    <strong>Horário:</strong>
+    <%= inscricao.palestra.horario %>
+  </p>
+
+  <p>
+    <strong>Local:</strong>
+    <%= inscricao.palestra.local %>
+  </p>
+
+  <p>
+    <strong>Valor:</strong>
+    <%= inscricao.valor %>
+  </p>
+
+  <p>
+    <strong>Pago:</strong>
+    <%= inscricao.pago %>
+  </p>
+
+  <%= image_tag "qrcode-pix.png", size: "150x150" %>
+
+  <p>
+    Pague com este QR Code.
+  </p>
+
+</div>
