@@ -21,15 +21,15 @@
 
   <p>
     <strong>Valor:</strong>
-    <%= inscricao.valor %>
+    <%= formata_valor(inscricao.palestra.valor) %>
   </p>
 
   <p>
     <strong>Pago:</strong>
-    <%= inscricao.pago %>
+    <%= pagou?(inscricao) %>
   </p>
 
-  <%= image_tag "qrcode-pix.png", size: "150x150" %>
+  <%= image_tag "qrcode-pix.png", size: "150x150" unless inscricao.pago?%>
 
   <p>
     Pague com este QR Code.

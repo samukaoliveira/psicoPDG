@@ -10,6 +10,11 @@ class InscricoesController < ApplicationController
   def show
   end
 
+  def emitir_certificado
+    certificado = CertificadoService.new
+    @certificado = certificado.gera_certificado(params[:palestra_id], params[:inscricao_id])
+  end
+
   # GET /inscricoes/new
   def new
     @inscricao = Inscricao.new

@@ -2,6 +2,17 @@
 
 <%= render @inscricao %>
 
+<% if @inscricao.presente? %>
+<div id="certificado">
+    <form action="/certificado" method="post"  target="_blank">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" id="palestra_id" name="palestra_id" value="<%= @inscricao.palestra.id %>" />
+      <input type="hidden" id="inscricao_id" name="inscricao_id" value="<%= @inscricao.id %>" />
+      <button type="submit">Gerar Certificado</button>
+    </form>
+</div>
+<% end %>
+
 <div>
   <%= link_to "Edit this inscricao", edit_inscricao_path(@inscricao) %> |
   <%= link_to "Back to inscricoes", inscricoes_path %>
